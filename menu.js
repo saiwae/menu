@@ -2,10 +2,9 @@ const readline= require('readline-sync');
 
 let order = [];
 let total = [];
+
+//step 1
 console.log('sandwiches choices:\nchicken: $5.25, beef: $6.25, tofu: $5.75');
-chicken = 5.25
-beef = 6.25
-tofu = 5.75
 order[0] = readline.question('sandwich of your choice: ');
 if (order[0] == 'beef' || order[0] == 'Beef'){
     total[0] = 6.25;
@@ -15,6 +14,8 @@ if (order[0] == 'beef' || order[0] == 'Beef'){
     total[0] = 5.75;
 }
 console.log(order);
+
+//step 2
 drink = readline.question('would you like a drink? (yes/no): ');
 if (drink == "yes" || drink == "Yes"){
     console.log('drink size choices:\nsmall: $1.00, medium: $1.75, large: $2.25');
@@ -32,6 +33,7 @@ if (drink == "yes" || drink == "Yes"){
 console.log(order);
 console.log(`total: $${total[0]+total[1]}`);
 
+// step 3
 fries = readline.question('would you like fries? (yes/no): ');
 if (fries == "yes" || fries == "Yes"){
     console.log('fries size choices:\nsmall: $1.00, medium: $1.50, large: $2.00');
@@ -55,9 +57,14 @@ if (fries == "yes" || fries == "Yes"){
 console.log(order);
 console.log(`total: $${total[0]+total[1]+total[2]}`);
 
+// step 4
 sauces = readline.question('would you like a ketchup? (yes/no): ');
 if (sauces == "yes" || sauces == "Yes")
     console.log('one ketchup packet costs $0.25');
 total[3] = Number(readline.question('how many would you like: '))*.25;
 console.log(order);
 console.log(`total: $${total[0]+total[1]+total[2]+total[3]}`);
+
+// next steps
+total[5] = Number((total[0]+total[1]+total[2]+total[3]+total[4])*.07)+(total[0]+total[1]+total[2]+total[3]+total[4]).toFixed(2);
+console.log(total[5]);
