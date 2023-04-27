@@ -53,8 +53,8 @@ if (fries == "yes" || fries == "Yes"){
 }
 
 // step 4 andrew
-sauces = readline.question('would you like a ketchup? (yes/no): ');
-if (sauces == "yes" || sauces == "Yes"){
+ketchup = readline.question('would you like a ketchup? (yes/no): ');
+if (ketchup == "yes" || ketchup == "Yes"){
     console.log('one ketchup packet costs $0.25');
     total[3] = Number(readline.question('how many would you like: '))*.25;
 } else {
